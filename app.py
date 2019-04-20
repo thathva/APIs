@@ -5,6 +5,7 @@ import pandas as pd
 from sklearn.externals import joblib
 import numpy as np
 
+
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
 api = Api(app)
