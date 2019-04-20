@@ -1,9 +1,7 @@
 from flask import Flask,jsonify,request
 from flask_restful import Api
 from flask_restful import Resource,reqparse
-import pandas as pd
 from sklearn.externals import joblib
-import numpy as np
 
 
 app = Flask(__name__)
