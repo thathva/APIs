@@ -3,7 +3,8 @@ from flask_restful import Api
 from flask_restful import Resource,reqparse
 from sklearn.externals import joblib
 
-
+clf2 = joblib.load('model.pkl')
+count=joblib.load("counts.pkl")
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
 api = Api(app)
@@ -18,6 +19,5 @@ def predict():
     return jsonify({'prediction':str(prediction)})
 
 if __name__ == '__main__':
-    clf2 = joblib.load('model.pkl')
-    count=joblib.load("counts.pkl")
+    
     app.run(port=5000, debug=True)  # important to mention debug=True
