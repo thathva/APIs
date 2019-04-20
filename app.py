@@ -15,8 +15,13 @@ def predict():
     a = [query['Message']]
     a=count.transform(a)
     prediction=clf2.predict(a)
+    pred="";
+    if(str(prediction)==1):
+        pred="Spam"
+    else:
+        pred="Not Spam"
     #return jsonify(query['Message'])
-    return jsonify({'prediction':str(prediction)})
+    return jsonify({'prediction':pred})
 
 if __name__ == '__main__':
     
